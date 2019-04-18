@@ -25,5 +25,5 @@ class Periodic:
 
     async def _run(self):
         while True:
-            await asyncio.sleep(self.time)
             self.func()
+            await asyncio.sleep(self.time)

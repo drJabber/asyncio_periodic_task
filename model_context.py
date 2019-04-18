@@ -63,7 +63,8 @@ class ModelContext:
         return self.iter.__next__()
 
     def run(self):
-        for epoch_n in tqdm.tqdm( range( self.steps ) ):
+        # for epoch_n in tqdm.tqdm( range( self.steps ) ):
+        for epoch_n in range( self.steps ) :
             self.field += self.emission
             torch.clamp( self.field, min=0, out=self.field )
             self.field = torch.nn.functional.conv2d( self.field, self.kernel, padding=1 )

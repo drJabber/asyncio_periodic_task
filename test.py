@@ -26,12 +26,12 @@ def payload(context,cmap):
 async def main():
 
 	cm = mpl.cm.get_cmap( 'jet' )
-	context = ModelContext('./data/emission.pkl',30,0.6,100)
+	context = ModelContext('./data/emission.pkl',30,0.6,500)
 	p = Periodic(lambda: payload(context,cm), 1)
 	try:
 		print('Start')
 		await p.start()
-		await asyncio.sleep(90.1)
+		await asyncio.sleep(100.1)
 		
 	finally:
 		await p.stop()  # we should stop task finally
