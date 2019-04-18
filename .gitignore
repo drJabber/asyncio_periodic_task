@@ -39,6 +39,9 @@ my_test_project/*
 #virtual environment 
 .venv/
 
+#generated data
+data/*.png
+
 # Generated when running celery beat
 celerybeat-schedule.db
 
